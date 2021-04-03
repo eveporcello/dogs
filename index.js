@@ -38,6 +38,8 @@ const server = new ApolloServer({
   ])
 });
 
-server.listen(4002).then(({ url }) => {
-  console.log(`🐶 Dog Service running at ${url}`);
+const PORT = process.env.PORT || 4000;
+
+server.listen({ port: PORT }).then(({ port }) => {
+  console.log(`🐶 Dog Service running at ${port}`);
 });
